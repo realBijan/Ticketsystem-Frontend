@@ -1,6 +1,7 @@
+// src/services/ticketService.js
 import axios from 'axios';
 
-const API_URL = '/api/tickets';
+const API_URL = 'http://localhost:5000/api/tickets';
 
 export const getTickets = async () => {
   return axios.get(API_URL).then(response => response.data);
