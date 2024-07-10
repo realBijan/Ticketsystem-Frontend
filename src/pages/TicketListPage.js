@@ -1,10 +1,9 @@
-// src/pages/TicketListPage.js
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './TicketListPage.css';
+import { UserContext } from '../UserContext';
 
 function TicketListPage() {
-  // Pseudodaten für die Ticketliste
   const [tickets, setTickets] = useState([
     {
       id: 1,
@@ -12,58 +11,59 @@ function TicketListPage() {
       email: 'student1@example.com',
       module: 'DLBWIEWI',
       material: 'Lernskript',
-      description: 'Ein Tippfehler im dritten Absatz.',
-      status: 'open',
+      description: 'Ein Tippfehler im dritten Absatz. könen anstatt können',
+      status: 'offen',
     },
     {
       id: 2,
       title: 'Unklare Formulierung in Übung 5',
       email: 'student2@example.com',
-      module: 'IMT1',
+      module: 'DLBINGOPJ',
       material: 'Übungsheft',
       description: 'Die Aufgabenstellung ist nicht klar verständlich.',
-      status: 'in_progress',
+      status: 'in Bearbeitung',
     },
     {
       id: 3,
       title: 'Veraltete Literaturangabe',
       email: 'student3@example.com',
-      module: 'DLBWIRITT01',
+      module: 'IOBP01',
       material: 'Literaturliste',
       description: 'Eine der Quellen ist nicht mehr aktuell.',
-      status: 'closed',
+      status: 'geschlossen',
     },
     {
       id: 4,
       title: 'Veraltete Literaturangabe',
       email: 'student3@example.com',
-      module: 'DLBWIRITT01',
+      module: 'IOBP01',
       material: 'Literaturliste',
       description: 'Eine der Quellen ist nicht mehr aktuell.',
-      status: 'closed',
+      status: 'geschlossen',
     },
     {
       id: 5,
       title: 'Veraltete Literaturangabe',
       email: 'student3@example.com',
-      module: 'DLBWIRITT01',
+      module: 'IOBP01',
       material: 'Literaturliste',
       description: 'Eine der Quellen ist nicht mehr aktuell.',
-      status: 'closed',
+      status: 'geschlossen',
     },
     {
       id: 6,
       title: 'Veraltete Literaturangabe',
       email: 'student3@example.com',
-      module: 'DLBWIRITT01',
+      module: 'IOBP01',
       material: 'Literaturliste',
       description: 'Eine der Quellen ist nicht mehr aktuell.',
-      status: 'closed',
+      status: 'geschlossen',
     },
   ]);
 
   const [filteredTickets, setFilteredTickets] = useState(tickets);
   const [searchTerm, setSearchTerm] = useState('');
+  const { user } = useContext(UserContext);
 
   useEffect(() => {
     if (searchTerm === '') {
@@ -113,7 +113,7 @@ function TicketListPage() {
               <td className="td">{ticket.description}</td>
               <td className="td">{ticket.status}</td>
               <td className="td">
-                <Link to={`/edit/${ticket.id}`}>Bearbeiten</Link>
+                {user ? <Link to={`/edit/${ticket.id}`}>Bearbeiten</Link> : 'Keine Berechtigung'}
               </td>
             </tr>
           ))}

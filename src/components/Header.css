@@ -1,48 +1,79 @@
 /* src/components/Header.css */
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: white;
-    color: black;
-  }
-  
-  .logoContainer {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo {
-    height: 100px;
-    margin-right: 10px;
-  }
-  
-  .title {
-    margin: 0;
-    font-size: 1.5rem;
-  }
-  
-  .navList {
-    list-style-type: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .navItem {
-    margin-left: 20px;
-  }
-  
-  .navLink {
-    color: black;
-    text-decoration: none;
-    font-size: 1.5rem;
-    transition: color 0.3s;
-  }
-  
-  .navLink:hover {
-    color: blue;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #FFA500; /* Orange Hintergrundfarbe */
+  color: black;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 100px;
+  margin-right: 10px;
+}
+
+.title {
+  margin: 0;
+  font-size: 2.0rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.navList {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navItem {
+  margin-left: 20px;
+}
+
+.navLink {
+  color: black;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.navLink:hover {
+  color: blue;
+}
+
+.login-form {
+  display: flex;
+  align-items: center;
+}
+
+.login-input {
+  width: 200px; /* Breite der Eingabefelder */
+  padding: 10px;
+  margin-right: 10px; /* Abstand zwischen den Eingabefeldern und dem Button */
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.login-button, .logout-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.user-name {
+  margin-right: 10px; /* Abstand zwischen dem Namen und dem Logout-Button */
+  font-size: 1.5rem;
+}
